@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 정보 수정</title>
+    <link rel="stylesheet" th:href="@{/update.css}">
+</head>
+<body>
+<header th:replace="~{layouts/header :: header}"></header>
+
+<div class="container">
+    <h2>사용자 정보 수정</h2>
+    <form action="/home/users/update" method="post" class="update-form">
+        <input type="hidden" th:value="${updateUser.userId}" name="userId">
+        <div class="form-group">
+            <label for="userEmail">이메일:</label>
+            <input type="text" id="userEmail" th:value="${updateUser.email}" name="email" readonly>
+        </div>
+        <div class="form-group">
+            <label for="userPassword">비밀번호:</label>
+            <input type="password" id="userPassword" th:value="${updateUser.password}" name="password" >
+        </div>
+        <div class="form-group">
+            <label for="userName">이름:</label>
+            <input type="text" id="userName" th:value="${updateUser.username}" name="username">
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">전화번호:</label>
+            <input type="text" id="phoneNumber" th:value="${updateUser.phoneNumber}" name="phoneNumber">
+        </div>
+        <div class="form-group">
+            <label for="department">학과:</label>
+            <input type="text" id="department" th:value="${updateUser.department}" name="department">
+        </div>
+        <div class="form-group">
+            <label for="studentId">학번:</label>
+            <input type="text" id="studentId" th:value="${updateUser.studentId}" name="studentId" readonly>
+        </div>
+        <div class="form-group">
+            <label for="userType">유저 타입:</label>
+            <select id="userType" name="userType">
+                <option th:value="MENTOR" th:selected="${updateUser.userType == 'MENTOR'}">멘토</option>
+                <option th:value="MENTEE" th:selected="${updateUser.userType == 'MENTEE'}">멘티</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="정보수정" class="submit-button">
+        </div>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 MY WEBSITE. All rights reserved.</p>
+</footer>
+
+<script th:src="@{/script.js}"></script>
+</body>
+</html>

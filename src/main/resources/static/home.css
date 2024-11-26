@@ -1,0 +1,125 @@
+/* 초기화 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 전체 레이아웃 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+/* 메인 콘텐츠 스타일 */
+.search-section {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.search-section h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.search-section input {
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+}
+
+.search-section button {
+    padding: 10px 20px;
+    background-color: #2a2a72;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* 분야 선택 섹션 */
+.category-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #eaf0f6;
+}
+
+.category-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.category-section select {
+    padding: 8px 12px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.category-section button {
+    padding: 8px 20px;
+    background-color: #2a2a72;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* 인기 멘토 섹션 */
+.featured-mentors {
+    padding: 20px;
+    text-align: center;
+}
+
+.featured-mentors h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.mentor-profiles {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.mentor-card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 100px;
+    text-align: center;
+}
+
+/* 리뷰 슬라이더 섹션 */
+.reviews {
+    padding: 20px;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.reviews h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.slider {
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

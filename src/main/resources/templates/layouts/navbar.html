@@ -1,0 +1,42 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/navbar.css">
+</head>
+<body>
+<!-- 네비게이션 바 -->
+<header>
+    <nav class="navbar">
+        <div class="navbar-section logo-section">
+            <div class="logo"><a href="/">HIM</a></div>
+        </div>
+        <div class="navbar-section menu-section">
+            <ul class="nav-menu">
+                <li><a href="/question/matching">매칭 검색</a></li>
+                <li><a href="/question/list">매칭 게시판</a></li>
+            </ul>
+        </div>
+        <div class="navbar-section auth-section">
+            <ul class="nav-menu">
+                <!-- 로그인 상태에 따라 다르게 표시 -->
+                <li>
+                    <a sec:authorize="isAnonymous()" th:href="@{/home/login}">로그인</a>
+                    <a sec:authorize="isAuthenticated()" th:href="@{/home/logout}">로그아웃</a>
+                </li>
+                <li>
+                    <a sec:authorize="isAnonymous()" th:href="@{/home/signup}">회원가입</a>
+                    <!-- 로그인 후 회원정보 수정 링크 표시 -->
+                    <a sec:authorize="isAuthenticated()">정보 수정</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+</body>
+</html>

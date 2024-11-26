@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>멘토 멘티 사이트</title>
+    <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+<div layout:fragment="content" class="container">
+    <!-- 메인 검색  -->
+    <section class="search-section">
+        <h1>Find your mentor & mentee</h1>
+        <label>
+            <input type="text" placeholder="검색어를 입력하세요...">
+        </label>
+        <button>검색</button>
+    </section>
+
+    <!-- 분야 선택  -->
+    <section class="category-section">
+        <h2>당신의 궁금한 분야는?</h2>
+        <label for="mentor-category"></label><select id="mentor-category">
+        <option value="IT">IT</option>
+        <option value="Business">비즈니스</option>
+        <option value="Design">디자인</option>
+        <option value="Marketing">마케팅</option>
+        <option value="Engineering">엔지니어링</option>
+        <option value="Others">기타</option>
+    </select>
+        <button onclick="searchCategory()">검색</button>
+    </section>
+
+    <!-- 이달의 멘토  -->
+    <section class="featured-mentors">
+        <h2>이달의 멘토</h2>
+        <div class="mentor-profiles">
+            <div class="mentor-card">멘토 1</div>
+            <div class="mentor-card">멘토 2</div>
+            <div class="mentor-card">멘토 3</div>
+            <div class="mentor-card">멘토 4</div>
+            <div class="mentor-card">멘토 5</div>
+        </div>
+    </section>
+
+    <!-- 리뷰 (밀어내기 슬라이드 형식 ) -->
+    <section class="reviews">
+        <h2>리뷰 및 후기</h2>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">리뷰 및 후기 섹션<br>테스트1</div>
+                <div class="slide">리뷰 및 후기 섹션<br>테스트2</div>
+                <div class="slide">리뷰 및 후기 섹션<br>테스트3</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <p>&copy; 2024 MY WEBSITE. All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+
+<head>
+    <title>Question List</title>
+    <link rel="stylesheet" type="text/css" href="/matching.css">
+</head>
+
+<body>
+<!-- 게시판 -->
+<div layout:fragment="content">
+    <div class="main-container">
+        <div class="container board-container">
+            <!-- 검색 폼 -->
+            <form action="/question/matching" method="get">
+                <div class="col-6">
+                    <div class="input-group">
+                        <input type="text" id="search_kw" name="kw" class="form-control" th:value="${kw}" placeholder="검색어를 입력하세요...">
+                        <button class="btn btn-outline-secondary" type="submit" id="btn_search">찾기</button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- 게시물 -->
+            <div class="post-grid">
+                <div th:each="question : ${paging.content}" class="post">
+                    <h2 th:text="${question.title}">질문 제목</h2>
+                    <p>작성자 :
+                        <span th:if="${question.author != null}" th:text="${question.author.username}">작성자</span>
+                        <span th:if="${question.author == null}">작성자 정보 없음</span>
+                    </p>
+                    <p th:text="'설명: ' + ${question.content}">설명</p>
+                    <p th:text="'작성일시: ' + ${#temporals.format(question.createdAt, 'yyyy-MM-dd HH:mm')}">작성일시</p>
+                    <a th:href="@{|/question/detail/${question.questionId}|}" class="apply-button">상세보기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 검색 결과가 없을 때 알림창 띄우기 -->
+<script th:if="${paging.content.isEmpty()}">
+    alert('검색된 제목이 없습니다.');
+</script>
+
+</body>
+</html>

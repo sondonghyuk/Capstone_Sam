@@ -1,0 +1,138 @@
+/* 기본 스타일 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin-top: 120px; /* 헤더 위치로 인해 여백 추가 */
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* 헤더 스타일 */
+header {
+    width: 100%;
+    background: linear-gradient(90deg, #3a3d98, #00d4ff);
+    color: white;
+    padding: 40px 40px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo-section .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu-section .nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-section .nav-menu li {
+    margin-right: 20px;
+}
+
+.menu-section .nav-menu li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-section .nav-menu li a:hover {
+    color: #00d4ff;
+    text-decoration: underline;
+}
+
+.auth-section a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.auth-section a:hover {
+    color: #00d4ff;
+    text-decoration: underline;
+}
+
+/* 마이페이지 스타일 */
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #3a3d98;
+}
+
+.profile-info, .account-settings, .activity-history, .notifications {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 버튼 스타일 */
+a.button {
+    display: inline-block;
+    padding: 8px 12px;
+    color: #fff;
+    background-color: #3a3d98;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+a.button:hover {
+    background-color: #00d4ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-section .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container {
+        width: 95%;
+    }
+}

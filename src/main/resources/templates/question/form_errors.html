@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Form Errors</title>
+</head>
+<body>
+<div th:fragment="formErrors">
+    <div class="alert alert-danger" role="alert" th:if="${#fields.hasAnyErrors()}">
+        <div th:each="err : ${#fields.allErrors()}" th:text="${err.defaultMessage}"></div>
+    </div>
+</div>
+</body>
+</html>

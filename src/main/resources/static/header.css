@@ -1,0 +1,37 @@
+/* 헤더 스타일 */
+header {
+    background: linear-gradient(to right, #2a2a72, #009ffd); /* 그라데이션 배경 */
+    padding: 15px 30px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin: 0 15px; /* 간격 조정 */
+}
+
+.nav-menu a, .auth-section a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-section {
+    display: flex;
+    gap: 15px; /* 로그인과 회원가입 간격 */
+}

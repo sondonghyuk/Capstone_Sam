@@ -1,0 +1,172 @@
+/* 전반적인 컨테이너 스타일 */
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 80px;
+    animation: fadeIn 0.5s ease-in-out;
+    background: rgba(255, 255, 255, 0.95); /* 약간의 투명도 추가 */
+}
+
+/* 페이드 인 애니메이션 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 테이블 스타일 */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table-dark {
+    background-color: #007bff;
+    color: white;
+}
+
+.table-dark th {
+    padding: 12px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.table td {
+    font-size: 14px;
+}
+
+.table a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.table a:hover {
+    text-decoration: underline;
+}
+
+/* 버튼 스타일 */
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #3a3d98, #00d4ff);
+    transition: transform 0.2s ease-in-out;
+    border: none;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #00d4ff, #3a3d98);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* 검색창 스타일 */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.input-group button {
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #ccc;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+}
+
+/* 페이지 네비게이션 스타일 */
+.pagination {
+    justify-content: center;
+    margin-top: 20px;
+    display: flex; /* Flexbox를 사용해 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    list-style-type: none; /* li 태그의 점 없애기 */
+    padding-left: 0; /* 기본 padding 제거 */
+}
+
+.page-item {
+    margin: 0 5px; /* 버튼 간격 조정 */
+}
+
+.page-item.disabled .page-link {
+    color: #ccc;
+    pointer-events: none;
+}
+
+.page-item .page-link {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+}
+
+.page-link {
+    border-radius: 50%;
+    padding: 10px 15px;
+}
+
+.page-link:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.page-item .page-link {
+    cursor: pointer;
+}
+
+/* 검색창과 페이지 네비게이션 위치 정렬 */
+.row.my-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 모바일 반응형 디자인 */
+@media (max-width: 768px) {
+    .table th, .table td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .input-group input, .input-group button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .pagination {
+        margin-top: 15px;
+    }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 상세 정보</title>
+    <link rel="stylesheet" th:href="@{/detail.css}">
+</head>
+<body>
+<header th:replace="~{layouts/header :: header}"></header>
+
+<div class="container">
+    <h2>사용자 상세 정보</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>유저 ID</th>
+            <th>이름</th>
+            <th>이메일</th>
+            <th>비밀번호</th>
+            <th>전화번호</th>
+            <th>유저 타입</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${user.userId}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.password}"></td>
+            <td th:text="${user.phoneNumber}"></td>
+            <td th:text="${user.userType}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    <p>&copy; 2024 MY WEBSITE. All rights reserved.</p>
+</footer>
+
+<script th:src="@{/script.js}"></script>
+</body>
+</html>

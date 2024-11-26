@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="ko" layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/create.css">
+    <title>질문 수정</title>
+</head>
+<body>
+<div layout:fragment="content" class="container">
+    <h1>매칭 수정</h1>
+    <form th:action="@{/qna/question/create}" th:object="${question}" method="post">
+        <label for="title">제목</label>
+        <div class="input-container">
+            <input type="text" id="title" th:field="*{title}" />
+            <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title Error</div>
+        </div>
+
+        <label for="content">내용</label>
+        <div class="input-container">
+            <textarea id="content" th:field="*{content}"></textarea>
+            <div th:if="${#fields.hasErrors('content')}" th:errors="*{content}">Content Error</div>
+        </div>
+
+        <button type="submit">등록</button>
+    </form>
+</div>
+</body>
+</html>

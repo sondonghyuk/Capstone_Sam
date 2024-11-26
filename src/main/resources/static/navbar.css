@@ -1,0 +1,86 @@
+body {
+  font-family: "Nanum Gothic Coding", monospace;
+  background: url('hallym.logo.png') no-repeat center top; /* 'top'으로 위치 조정 */
+  background-size: cover; /* 배경 이미지를 화면에 맞춤 */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  background: linear-gradient(90deg, #3a3d98, #00d4ff); /* 멘토 매칭 사이트와 동일한 배경 */
+  color: white;
+  padding: 40px 40px;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 동일한 그림자 효과 */
+  z-index: 1000;
+}
+.logo-section {
+  position: absolute;
+  top: 5px;
+  left:80px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.menu-section {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px; /* 동일한 간격 */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px; /* 동일한 텍스트 크기 */
+  padding: 10px 15px;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 5px;
+}
+
+.nav-menu a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.auth-section {
+  position: absolute;
+  right: 90px;
+}
+
+.auth-section a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.auth-section a:hover {
+  color: #e0e0e0;
+}
+
+

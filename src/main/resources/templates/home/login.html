@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="ko" layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/login-style.css">
+    <title>로그인</title>
+</head>
+<body>
+<div layout:fragment="content" class="container">
+        <form th:action="@{/home/login}" th:object="${user}" method="post">
+            <div th:if="${param.error}">
+                <div class="alert alert-danger">
+                    사용자ID 또는 비밀번호를 확인해 주세요.
+                </div>
+            </div>
+
+            <label for="username">사용자ID(이름)</label>
+            <div class="input-container">
+                <i class="icon-user">🧑‍</i>
+                <input type="text" name="username" id="username" th:field="*{username}" class="form-control">
+            </div>
+
+            <label for="password">비밀번호</label>
+            <div class="input-container">
+                <i class="icon-password">🔒</i>
+                <input type="password" name="password" id="password" th:field="*{password}" class="form-control">
+            </div>
+
+            <button type="submit">로그인</button>
+        </form>
+        <p><button type="submit"><a th:href="@{/home/signup}">회원가입</a></button></p>
+</div>
+</body>
+</html>

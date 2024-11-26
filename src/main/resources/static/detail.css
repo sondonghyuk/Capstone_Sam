@@ -1,0 +1,140 @@
+/* 전반적인 컨테이너 스타일 */
+.container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    margin-top: 80px;
+    margin: 0 auto; /* 중앙 정렬 */
+    background: rgba(255, 255, 255, 0.95); /* 약간의 투명도 추가 */
+}
+
+/* 제목 스타일 */
+h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 카드 스타일 (질문 및 답변) */
+.card {
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* 질문 내용 스타일 */
+.card-text {
+    margin-bottom: 20px;
+}
+
+/* 날짜 및 작성자 정보 스타일 */
+.badge {
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 25px;
+    background-color: #f0f0f0;
+    color: #333;
+    margin-right: 10px;
+}
+
+.badge.bg-light {
+    background-color: #f8f9fa;
+}
+
+.badge.text-dark {
+    color: #333;
+}
+
+/* 추천 및 버튼 스타일 */
+.recommend, .delete, .btn-outline-secondary {
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #007bff;
+    transition: 0.2s;
+}
+
+.recommend:hover, .delete:hover, .btn-outline-secondary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.recommend .badge, .delete .badge {
+    margin-left: 5px;
+}
+
+/* 답변 작성 폼 스타일 */
+textarea.form-control {
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-top: 15px;
+    width: 100%;
+    background-color: #f8f9fa;
+    resize: vertical;
+}
+
+textarea.form-control:focus {
+    border-color: #007bff;
+}
+
+input[type="submit"] {
+    font-size: 16px;
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* 모바일 반응형 디자인 */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .badge {
+        font-size: 12px;
+    }
+
+    .recommend, .delete, .btn-outline-secondary {
+        font-size: 12px;
+    }
+
+    .btn-primary, input[type="submit"] {
+        width: 100%;
+    }
+}

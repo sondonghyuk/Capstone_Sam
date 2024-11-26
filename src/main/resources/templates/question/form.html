@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="ko" layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/login-style.css">
+    <title>매칭생성</title>
+</head>
+<body>
+<div layout:fragment="content" class="container">
+    <h1>새로운 매칭 생성</h1>
+    <form th:object="${questionDto}" method="post">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        <div th:replace="~{layouts/form_errors :: formErrorsFragment}"></div>
+        <div class="input-container">
+            <label for="title" class="form-label">제목</label>
+            <input type="text" id="title" th:field="*{title}" class="form-control">
+        </div>
+        <div class="input-container">
+            <label for="content" class="form-label">내용</label>
+            <textarea id="content" th:field="*{content}" class="form-control" rows="10"></textarea>
+        </div>
+        <button type="submit">등록</button>
+    </form>
+</div>
+</body>
+</html>
